@@ -21,15 +21,23 @@ st.write("Ingrese los datos del pasajero para evaluar su probabilidad de supervi
 col1, col2 = st.columns(2)
 
 with col1:
-    pclass = st.selectbox("Clase del Pasajero (Pclass)", [1, 2, 3], help="1 = Primera, 2 = Segunda, 3 = Tercera")
+    # index=2 hace que por defecto aparezca seleccionada la 3ra clase (la más común)
+    pclass = st.selectbox("Clase del Pasajero (Pclass)", [1, 2, 3], index=2, help="1 = Primera, 2 = Segunda, 3 = Tercera.")
     sex = st.selectbox("Sexo", ["Masculino", "Femenino"])
-    age = st.number_input("Edad", min_value=0.0, max_value=100.0, value=30.0)
-    fare = st.number_input("Tarifa pagada (Fare)", min_value=0.0, value=32.0)
+    
+    # step=1.0 para que sume de a 1 año entero. value=28.0 (mediana histórica)
+    age = st.number_input("Edad", min_value=0.0, max_value=100.0, value=28.0, step=1.0)
+    
+    # Tarifa máxima histórica fue aprox 512. step=5.0 para saltos más cómodos al usuario
+    fare = st.number_input("Tarifa pagada (Fare)", min_value=0.0, max_value=600.0, value=15.0, step=5.0)
 
 with col2:
-    sibsp = st.number_input("Hermanos/Cónyuges a bordo (SibSp)", min_value=0, max_value=10, value=0)
-    parch = st.number_input("Padres/Hijos a bordo (Parch)", min_value=0, max_value=10, value=0)
-    embarked = st.selectbox("Puerto de Embarque", ["C (Cherbourg)", "Q (Queenstown)", "S (Southampton)"])
+    # Máximos históricos reales del dataset: SibSp=8, Parch=6
+    sibsp = st.number_input("Hermanos/Cónyuges a bordo (SibSp)", min_value=0, max_value=8, value=0, step=1)
+    parch = st.number_input("Padres/Hijos a bordo (Parch)", min_value=0, max_value=6, value=0, step=1)
+    
+    # Southampton fue el puerto donde embarcó la inmensa mayoría, lo ponemos primero
+    embarked = st.selectbox("Puerto de Embarque", ["S (Southampton)", "C (Cherbourg)", "Q (Queenstown)"])
 
 # 4. Procesamiento de los datos ingresados
 # Transformar las entradas para que coincidan exactamente con el preprocesamiento del COLAB
