@@ -1,0 +1,4 @@
+PROMPT UTILIZADO:
+Actúa como un Desarrollador Senior de Machine Learning. Escribe el código en Python usando la librería Streamlit para crear una aplicación web interactiva que prediga la supervivencia en el Titanic. La aplicación debe cargar un modelo pre-entrenado en formato .pkl (ubicado en una carpeta 'modelos') usando joblib. Debe incluir una interfaz limpia con campos de entrada para las variables: Pclass, Sex, Age, SibSp, Parch, Fare y Embarked. Al presionar un botón, debe realizar la predicción. 
+
+Imprescindible: El contenido de la página web debe incluir un enlace a mi cuaderno de código de Google COLAB (como lector), mi nombre completo y mi código ISIL en la parte superior.
