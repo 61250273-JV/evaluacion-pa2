@@ -51,6 +51,10 @@ input_data = pd.DataFrame({
 
 # 5. Botón de Predicción
 if st.button("🔮 Predecir Supervivencia"):
+    # HOTFIX: Igualar los nombres de las columnas a los que el modelo espera internamente
+    input_data.columns = modelo.feature_names_in_
+    
+    # Realizar la predicción
     prediccion = modelo.predict(input_data)
     
     st.markdown("---")
