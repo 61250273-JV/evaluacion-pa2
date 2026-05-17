@@ -11,8 +11,8 @@ except Exception as e:
 
 # 2. Encabezado de la aplicación (Requisito ISIL)
 st.title("🚢 Predicción de Supervivencia en el Titanic")
-st.markdown("### Desarrollado por: [Tu Nombre Apellido] - Código ISIL: [Tu Código]")
-st.markdown("🔗 **[Enlace a mi cuaderno de Google COLAB](Pega_aqui_tu_enlace_de_compartir_en_modo_lector)**")
+st.markdown("### Desarrollado por: Joel Vargas Cano - Código ISIL: 61250273")
+st.markdown("🔗 **https://colab.research.google.com/drive/1IPJHSg7cI4dRbEOxF9DrVkzdQOiyAAFi?usp=sharing**")
 st.markdown("---")
 
 st.write("Ingrese los datos del pasajero para evaluar su probabilidad de supervivencia:")
